@@ -23,4 +23,7 @@ function mapStateToProps(state) {
   };
 }
 
+
+//This connects mapStateToProps to BookDetail dumb component to make
+//it a smart component
 export default connect(mapStateToProps)(BookDetail);
