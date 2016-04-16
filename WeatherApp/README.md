@@ -35,29 +35,26 @@ Explain the app structure and what goes where.
 2. React Documentation
 3. Glossary
 
+###Running the App###
+The webpack configuration file has multiple entry points. When we first run our app, it needs to know what file to run first. In order to figure this out, when we first run our app, we define an entry point, a path to the file that we want to run first, which is the `src/index.js file.`
 
-I am going to layout how I made this app just so that the concepts solidify. If you find this useful, go ahead and hit that star button :)
-(https://octodex.github.com/images/yaktocat.png)
+###Exploring src/index.js###
 
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxPromise from 'redux-promise';
 
-###Getting Started###
+import App from './components/app';
+import reducers from './reducers';
 
-There are two methods for getting started with this repo.
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-####Familiar with Git?#####
-Checkout this repo, install depdencies, then start the gulp process with the following:
-
-```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
-```
-
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-	> npm install
-	> npm start
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.querySelector('.container'));
 ```
