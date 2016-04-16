@@ -1,5 +1,19 @@
-# Weather App #
+#Weather App - Followed Stephen Garder's Udemy Course#
+
 ##Introduction##
+
+Let's begin with the app structure:
+```
+├── ...
+├── test                    # Test files (alternatively `spec` or `tests`)
+│   ├── benchmarks          # Load and stress tests
+│   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
+│   └── unit                # Unit tests
+└── ...
+```
+
+
+
 ###Introduction###
 
 
