@@ -1,8 +1,8 @@
 # Weather App #
+##Introduction##
+###Introduction###
 
-### Introduction ###
 
-## Introduction ##
 
 I am going to layout how I made this app just so that the concepts solidify. If you find this useful, go ahead and hit that star button :)
 (https://octodex.github.com/images/yaktocat.png)
